@@ -1,5 +1,10 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: '/suzuki-hiroaki-static/'
+  root: 'src',
+  base: '/suzuki-hiroaki-static/',
+  publicDir: 'public',
+  build: {
+    outDir: '../dist',
+  },
 });

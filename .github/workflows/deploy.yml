@@ -5,7 +5,6 @@ on:
   # デフォルトブランチを対象としたプッシュ時にで実行されます
   push:
     branches: ['main']
-
   # Actions タブから手動でワークフローを実行できるようにします
   workflow_dispatch:
 
@@ -23,9 +22,6 @@ concurrency:
 jobs:
   # デプロイするだけなので、単一のデプロイジョブ
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,10 +40,9 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          # dist リポジトリーのアップロード
           path: ./dist
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
