@@ -9,22 +9,25 @@
   </head>
 
   <body>
-    <header>
-      <h1>Suzuki Hiroaki</h1>
-      <ul>
+    <header class="header">
+      <div class="header__logo">
+        <img src="/img/vite.svg" alt="Vite">
+        <h1>Suzuki Hiroaki</h1>
+      </div>
+      <ul class="header__sns-list">
         <li>
-          <a href="https://www.instagram.com/kanbaru2024/">
-            <img src="" alt="Instagram">
+          <a href="https://www.instagram.com/kanbaru2024/" target="_blank">
+            <img src="/img/icon_Instagram.png" alt="Instagram">
           </a>
         </li>
         <li>
-          <a href="https://twitter.com/TeXELtARaTfz4K2">
-            <img src="" alt="X">
+          <a href="https://twitter.com/kanbaru2024" target="_blank">
+            <img src="/img/icon_x.png" alt="X">
           </a>
         </li>
         <li>
-          <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP">
-            <img src="" alt="Facebook">
+          <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP" target="_blank">
+            <img src="/img/icon_Facebook.png" alt="Facebook">
           </a>
         </li>
       </ul>
@@ -32,11 +35,47 @@
 
     <main>
       <div class="main-visual">
-        <img src="" alt="Main visual">
+        <img src="/img/main-visual.jpg" alt="Main visual">
       </div>
 
       <section class="self-introduction">
+        <h2>Introduction</h2>
+        <p>
+          現在はWebエンジニアとして働いております。<br>
+          出身は三重県で趣味は音楽ゲーム、サウナ、読書、音楽鑑賞でして最近麻雀始めました。<br>
+          皆さんのお手伝いができればと考えております。
+        </p>
+      </section>
 
+      <section class="service">
+        <h2>Service</h2>
+        <ul>
+          <li>
+            <figure>
+              <img src="">
+              <figcaption></figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <section class="technology">
+        <h2>technology used</h2>
+        <ul>
+          <li>
+            <figure>
+              <img src="" alt="HTML">
+              <figcaption>HTML</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </section>
+
+      <section class="works">
+        <h2>Works</h2>
+        <p class="no-contents">
+          Coming soon...
+        </p>
       </section>
     </main>
     <div id="app"></div>
@@ -44,6 +83,10 @@
     <div class="to-top-btn js-toTopBtn">
       ↑
     </div>
+
+    <footer>
+      ©︎Suzuki Hiroaki All rights reserved.
+    </footer>
     <script type="module" src="/src/ts/main.ts"></script>
   </body>
 </html>
