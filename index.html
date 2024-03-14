@@ -47,9 +47,9 @@
         </p>
       </section>
 
-      <section class="service">
+      <section class="service" id="service">
         <h2>Service</h2>
-        <ul>
+        <ul class="service__list">
           <li>
             <figure>
               <img src="/public/img/icon-coding.png" alt="Coding">
@@ -59,9 +59,9 @@
         </ul>
       </section>
 
-      <section class="technology-used">
-        <h2>Technology used</h2>
-        <ul>
+      <section class="skill">
+        <h2>Skill</h2>
+        <ul class="skill__tech-list">
           <li>
             <a href="https://developer.mozilla.org/ja/docs/Web/HTML" target="_blank">
               <figure>
@@ -102,6 +102,14 @@
               </figure>
             </a>
           </li>
+          <li>
+            <a href="https://laravel.com/" target="_blank">
+              <figure>
+                <img src="/public/img/laravel.svg" alt="laravel">
+                <figcaption>Laravel</figcaption>
+              </figure>
+            </a>
+          </li>
         </ul>
       </section>
 
@@ -120,13 +128,14 @@
       </section>
     </main>
 
-    <!-- <div id="app"></div> -->
+    <div id="app"></div>
 
     <a href="#" class="to-top-btn js-toTopBtn">
       ↑
     </a>
 
     <footer class="footer">
+      <h3>引用元:</h3>
       <ul class="footer__ref-list">
         <li>
           <a target="_blank" href="https://icons8.com/icon/sXm12ie1GUjg/laptop-coding">Coding</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
@@ -141,10 +150,11 @@
           <a target="_blank" href="https://icons8.com/icon/fAMVO_fuoOuC/php-logo">PHP ロゴ</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
         </li>
       </ul>
+
       <p class="footer__copyRight">
         ©︎Suzuki Hiroaki All rights reserved.
       </p>
-      <a href="./sandbox.html">Sandbox</a>
+      <!-- <a href="./sandbox.html">Sandbox</a> -->
     </footer>
 
     <script type="module" src="/src/ts/main.ts"></script>
