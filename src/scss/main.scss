@@ -1,26 +1,24 @@
-@use "./reset";
-@use "./variables" as var;
-@use "./header";
+@use "./modules/reset";
+@use "./modules/variables" as vars;
+@use "./modules/mixins";
+@use "./modules/header";
 
-@mixin large-screen {
-  @media only screen and (min-width: 760px) {
-    @content;
+// 高さ・位置・透過が変化して線が上から下に動く
+@keyframes scroll-prompt {
+  0% {
+    height: 0;
+    top: 0;
+    opacity: 0;
   }
-}
-
-@mixin section-title {
-  font-size: 2.4rem;
-  font-family: cursive;
-  text-align: center;
-  margin-top: 25px;
-}
-
-// コンテンツを埋めたら削除
-@mixin no-contents {
-  margin-top: 10px;
-  text-align: center;
-  font-size: large;
-  color: #888;
+  30% {
+    height: 30px;
+    opacity: 1;
+  }
+  100% {
+    height: 0;
+    top: 50px;
+    opacity: 0;
+  }
 }
 
 body {
@@ -30,29 +28,62 @@ body {
   min-height: 100vh;
 }
 
+main {
+  padding-top: 50px;
+}
+
 .main-visual {
   margin: 0 auto;
   width: 90%;
   max-width: 500px;
+  position: relative;
   img {
     border-radius: 50%;
-    width: 100%
+    width: 100%;
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  height: 50px;
+  span {
+    position: absolute;
+    left: -15px;
+    top: -15px;
+    color: #eee;
+    font-size: .7rem;
+    letter-spacing: .05em;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 30px;
+    background: #eee;
+    animation: scroll-prompt 1.4s ease-in-out infinite;
+    opacity: 0;
   }
 }
 
 .self-introduction {
   h2 {
-    @include section-title();
+    @include mixins.section-title();
   }
   p {
     margin: 10px auto 0;
     width: 95%;
+    @include mixins.large-screen() {
+      width: 30rem;
+    }
   }
 }
 
 .service {
   h2 {
-    @include section-title();
+    @include mixins.section-title();
   }
   &__list {
     margin: 10px auto 0;
@@ -70,7 +101,7 @@ body {
 
 .skill {
   h2 {
-    @include section-title();
+    @include mixins.section-title();
   }
   &__tech-list {
     margin: 10px auto 0;
@@ -78,6 +109,9 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    @include mixins.large-screen() {
+      width: 35rem;
+    }
   }
   li {
     width: 30%;
@@ -106,19 +140,19 @@ body {
 
 .works {
   h2 {
-    @include section-title();
+    @include mixins.section-title();
   }
   &__no-contents {
-    @include no-contents();
+    @include mixins.no-contents();
   }
 }
 
 .blogs {
   h2 {
-    @include section-title();
+    @include mixins.section-title();
   }
   &__no-contents {
-    @include no-contents();
+    @include mixins.no-contents();
   }
 }
 
@@ -127,7 +161,7 @@ body {
   width: 3rem;
   line-height: 3rem;
   background-color: #000;
-  color: var.$main-color;
+  color: vars.$main-color;
   border-radius: 50%;
   text-align: center;
   font-size: 1.5rem;
@@ -138,48 +172,18 @@ body {
 }
 
 .footer {
-  background-color: var.$main-color;
+  background-color: vars.$main-color;
   padding: 1rem;
   margin-top: 1rem;
   &__ref-list {
     margin-top: 6px;
-    margin: 6px auto 0 .9rem;
-    font-size: .9rem;
+    margin: 6px auto 0 0.9rem;
+    font-size: 0.9rem;
     line-height: 1.2;
   }
   &__copyRight {
     margin-top: 10px;
-    font-size: .6rem;
+    font-size: 0.6rem;
     text-align: center;
   }
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.card {
-  padding: 2em;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
 }

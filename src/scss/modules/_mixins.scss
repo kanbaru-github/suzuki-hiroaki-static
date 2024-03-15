@@ -1,0 +1,20 @@
+@mixin large-screen {
+  @media only screen and (min-width: 760px) {
+    @content;
+  }
+}
+
+@mixin section-title {
+  font-size: 2.4rem;
+  font-family: cursive;
+  text-align: center;
+  margin-top: 25px;
+}
+
+// コンテンツを埋めたら削除
+@mixin no-contents {
+  margin-top: 10px;
+  text-align: center;
+  font-size: large;
+  color: #888;
+}

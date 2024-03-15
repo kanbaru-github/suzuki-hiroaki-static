@@ -9,36 +9,63 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__logo">
+    <header class="header" id="js-header">
+      <a href="#" class="header__logo">
         <img src="/img/vite.svg" alt="Vite">
         <h1>Suzuki Hiroaki</h1>
-      </div>
-      <ul class="header__sns-list">
-        <li>
-          <a href="https://www.instagram.com/kanbaru2024/" target="_blank">
-            <img src="/img/icon_Instagram.png" alt="Instagram">
-          </a>
-        </li>
-        <li>
-          <a href="https://twitter.com/kanbaru2024" target="_blank">
-            <img src="/img/icon_x.png" alt="X">
-          </a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP" target="_blank">
-            <img src="/img/icon_Facebook.png" alt="Facebook">
-          </a>
-        </li>
-      </ul>
+      </a>
+
+      <button class="header__hamburger-btn" id="js-hamburgerBtn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="header__hamburger-nav" id="js-hamburgerMenu">
+        <ul class="header__hamburger-nav-list">
+          <li class="header__hamburger-nav-list-item">
+            <a href="#">Top</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <a href="#service">Service</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <a href="#skill">Skill</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <ul class="header__hamburger-nav-sns-list">
+              <li>
+                <a href="https://www.instagram.com/kanbaru2024/" target="_blank">
+                  <img src="/img/icon_Instagram.png" alt="Instagram">
+                </a>
+              </li>
+              <li>
+                <a href="https://twitter.com/kanbaru2024" target="_blank">
+                  <img src="/img/icon_x.png" alt="X">
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP" target="_blank">
+                  <img src="/img/icon_Facebook.png" alt="Facebook">
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-      <div class="main-visual">
+      <section class="main-visual">
         <img src="/img/main-visual.jpg" alt="Main visual">
-      </div>
+        <div class="scroll-down">
+          <span>Scroll</span>
+        </div>
+      </section>
 
-      <section class="self-introduction">
+      <section class="self-introduction" id="introduction">
         <h2>Introduction</h2>
         <p>
           現在はWebエンジニアとして働いております。<br>
@@ -52,20 +79,20 @@
         <ul class="service__list">
           <li>
             <figure>
-              <img src="/public/img/icon-coding.png" alt="Coding">
+              <img src="/img/icon-coding.png" alt="Coding">
               <figcaption>コーディングいたします。</figcaption>
             </figure>
           </li>
         </ul>
       </section>
 
-      <section class="skill">
+      <section class="skill" id="skill">
         <h2>Skill</h2>
         <ul class="skill__tech-list">
           <li>
             <a href="https://developer.mozilla.org/ja/docs/Web/HTML" target="_blank">
               <figure>
-                <img src="/public/img/icon-html5.svg" alt="HTML">
+                <img src="/img/icon-html5.svg" alt="HTML">
                 <figcaption>HTML</figcaption>
               </figure>
             </a>
@@ -73,7 +100,7 @@
           <li>
             <a href="https://sass-lang.com/" target="_blank">
               <figure>
-                <img src="/public/img//icon-sass.svg" alt="Sass">
+                <img src="/img//icon-sass.svg" alt="Sass">
                 <figcaption>Sass</figcaption>
               </figure>
             </a>
@@ -81,7 +108,7 @@
           <li>
             <a href="https://www.php.net/" target="_blank">
               <figure>
-                <img src="/public/img/icon-php.svg" alt="PHP">
+                <img src="/img/icon-php.svg" alt="PHP">
                 <figcaption>PHP</figcaption>
               </figure>
             </a>
@@ -89,7 +116,7 @@
           <li>
             <a href="https://www.typescriptlang.org/" target="_blank">
               <figure>
-                <img src="/public/img/typescript.svg" alt="TypeScript">
+                <img src="/img/typescript.svg" alt="TypeScript">
                 <figcaption>TypeScript</figcaption>
               </figure>
             </a>
@@ -97,7 +124,7 @@
           <li>
             <a href="https://vitejs.dev/" target="_blank">
               <figure>
-                <img src="/public/img/vite.svg" alt="Vite">
+                <img src="/img/vite.svg" alt="Vite">
                 <figcaption>Vite</figcaption>
               </figure>
             </a>
@@ -105,7 +132,7 @@
           <li>
             <a href="https://laravel.com/" target="_blank">
               <figure>
-                <img src="/public/img/laravel.svg" alt="laravel">
+                <img src="/img/laravel.svg" alt="laravel">
                 <figcaption>Laravel</figcaption>
               </figure>
             </a>
@@ -130,7 +157,7 @@
 
     <div id="app"></div>
 
-    <a href="#" class="to-top-btn js-toTopBtn">
+    <a href="#" class="to-top-btn" id="js-toTopBtn">
       ↑
     </a>
 
@@ -154,7 +181,6 @@
       <p class="footer__copyRight">
         ©︎Suzuki Hiroaki All rights reserved.
       </p>
-      <!-- <a href="./sandbox.html">Sandbox</a> -->
     </footer>
 
     <script type="module" src="/src/ts/main.ts"></script>
