@@ -7,12 +7,29 @@ reviews:
   review_status: true
   collapse_walkthrough: false
   path_filters:
-    - "!**/.xml"
+    - "!dist/**"
   path_instructions:
     - path: "**/*.js"
       instructions:
         "Review the JavaScript code for conformity with the Google JavaScript
         style guide, highlighting any deviations."
+    - path: "**/*.ts"
+      instructions:
+        - Use 2 space indentation
+        - Follow the Boy Scout rule: Leave the code cleaner than you found it
+        - Follow YAGNI (You Aren't Gonna Need It): Don't implement functionality until it's needed
+        - Follow DRY (Don't Repeat Yourself): Avoid duplicating code by extracting reusable logic into functions
+        - Follow KISS (Keep It Simple, Stupid): Write simple, straightforward code
+        - TypeScript selector names should be prefixed with 'js-' and use camelCase
+        - Review the TypeScript code for adherence to the official TypeScript style guide"
+    - path: "**/*.scss"
+      instructions:
+        "- Use 2 space indentation
+        - Follow BEM naming conventions for CSS selectors, using kebab-case for word separators
+        - Use lowercase for color codes"
+    - path: "**/*.index"
+      instructions:
+        "- Use 2 space indentation"
     - path: "tests/**/*"
       instructions: |
         "Assess the unit test code employing the Mocha testing framework. Confirm that:
@@ -25,7 +42,7 @@ reviews:
       - "DO NOT MERGE"
     drafts: false
     base_branches:
-      - "develop"
+      - "dev"
       - "feat/.*"
   tools:
     ast-grep:

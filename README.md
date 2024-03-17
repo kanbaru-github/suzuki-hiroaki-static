@@ -16,5 +16,5 @@
 - TypeScriptで使用するセレクタ名は接頭辞"js-"をつけてキャメルケース
 
 ## Other rules
-- ブランチ名はGit Flowsに従う
+- ブランチ名はGitFlowに従う
 - ソースレビューはGitHubでプルリクエストを作成してCodeRabbitを実行
