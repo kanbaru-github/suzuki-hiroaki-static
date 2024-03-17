@@ -10,11 +10,11 @@ reviews:
     - "!dist/**"
   path_instructions:
     - path: "**/*.js"
-      instructions:
+      instructions: |
         "Review the JavaScript code for conformity with the Google JavaScript
         style guide, highlighting any deviations."
     - path: "**/*.ts"
-      instructions:
+      instructions: |
         - Use 2 space indentation
         - Follow the Boy Scout rule: Leave the code cleaner than you found it
         - Follow YAGNI (You Aren't Gonna Need It): Don't implement functionality until it's needed
@@ -23,12 +23,12 @@ reviews:
         - TypeScript selector names should be prefixed with 'js-' and use camelCase
         - Review the TypeScript code for adherence to the official TypeScript style guide"
     - path: "**/*.scss"
-      instructions:
+      instructions: |
         "- Use 2 space indentation
         - Follow BEM naming conventions for CSS selectors, using kebab-case for word separators
         - Use lowercase for color codes"
     - path: "**/*.index"
-      instructions:
+      instructions: |
         "- Use 2 space indentation"
     - path: "tests/**/*"
       instructions: |
