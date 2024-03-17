@@ -142,8 +142,36 @@ main {
   h2 {
     @include mixins.section-title();
   }
-  &__no-contents {
-    @include mixins.no-contents();
+  &__repo-list {
+    width: 95%;
+    margin: 5px auto 0;
+    @include mixins.large-screen {
+      width: 60%
+    }
+    li {
+      display: flex;
+      border: 1px solid #000;
+      margin-bottom: 5px;
+      a {
+        color: #000;
+        font-weight: bold;
+        font-size: 1.2rem;
+        display: flex;
+        img {
+          width: 75px;
+          margin-right: 1rem;
+        }
+        div {
+          padding: 15px 0;
+        }
+        p {
+          color: gray;
+          margin-top: 5px;
+          font-weight: normal;
+          font-size: .9rem
+        }
+      }
+    }
   }
 }
 

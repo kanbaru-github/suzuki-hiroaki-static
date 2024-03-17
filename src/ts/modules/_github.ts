@@ -1,3 +1,5 @@
+import githubIcon from '../../../public/img/icon-github.svg';
+
 interface Repository {
   id: number;
   name: string;
@@ -6,9 +8,10 @@ interface Repository {
 }
 
 async function fetchRepositories(username: string): Promise<Repository[]> {
-  const response = await fetch(`https://api.github.com/users/${username}/repos`);
+  const queryParam = '?sort=updated&direction=desc';
+  const response = await fetch(`https://api.github.com/users/${username}/repos${queryParam}`);
   const data = await response.json();
-  return data.map((repo: any) => ({
+  return data.map((repo: Repository) => ({
     id: repo.id,
     name: repo.name,
     description: repo.description,
@@ -16,26 +19,39 @@ async function fetchRepositories(username: string): Promise<Repository[]> {
   }));
 }
 
-async function displayRepositories(username: string) {
+/**
+ * GitHubリポジトリのリストを取得
+ * @param username - GitHubユーザー名
+ */
+export async function displayRepositories(username: string) {
   try {
     const repositories = await fetchRepositories(username);
-    const repoList = document.getElementById('repo-list');
+    const repoList = document.getElementById('js-repoList');
     if (repoList) {
       repositories.forEach((repo) => {
         const listItem = document.createElement('li');
+
         const link = document.createElement('a');
         link.href = repo.html_url;
-        link.textContent = repo.name;
+        link.target = '_blank';
+
+        const linkRightCol = document.createElement('div');
+        linkRightCol.textContent = repo.name;
+
+        const img = document.createElement('img');
+        img.src = githubIcon;
+
+        const description = document.createElement('p');
+        description.textContent = repo.description || 'No description provided.';
+
+        linkRightCol.appendChild(description);
+        link.appendChild(img);
+        link.appendChild(linkRightCol);
         listItem.appendChild(link);
         repoList.appendChild(listItem);
       });
-    } else {
-      console.error('No element with id "repo-list" found');
     }
   } catch (error) {
     console.error('Error fetching repositories:', error);
   }
 }
-
-// 使用例
-displayRepositories('your-github-username');

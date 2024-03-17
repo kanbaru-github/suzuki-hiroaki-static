@@ -1,3 +1,5 @@
+import { displayRepositories } from "./modules/_github";
+
 /**
  * スムーススクロールを制御
  */
@@ -60,5 +62,6 @@ const handleHamburgerMenu = () => {
 handleScroll();
 handleToTopBtn();
 handleHamburgerMenu();
+displayRepositories('kanbaru-github');
 
 window.addEventListener('scroll', handleToTopBtn);
