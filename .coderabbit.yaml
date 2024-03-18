@@ -44,9 +44,5 @@ reviews:
     base_branches:
       - "dev"
       - "feat/.*"
-  tools:
-    ast-grep:
-      rules_folder: "custom-rules-folder-name"
-      utils_folder: "custom-utils-folder-name"
 chat:
   auto_reply: true
