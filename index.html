@@ -2,18 +2,18 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/suzuki-hiroaki-static/img/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/suzuki-hiroaki-static/img/icon-vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Suzuki Hiroaki Static</title>
-    <script type="module" crossorigin src="/suzuki-hiroaki-static/assets/main-CdkhrFZA.js"></script>
-    <link rel="modulepreload" crossorigin href="/suzuki-hiroaki-static/assets/main-7JQgEaxu.js">
-    <link rel="stylesheet" crossorigin href="/suzuki-hiroaki-static/assets/main-UryDBcd-.css">
+    <script type="module" crossorigin src="/suzuki-hiroaki-static/assets/main-C0hBXrW5.js"></script>
+    <link rel="modulepreload" crossorigin href="/suzuki-hiroaki-static/assets/main-CaAFXIln.js">
+    <link rel="stylesheet" crossorigin href="/suzuki-hiroaki-static/assets/main-AhWD1D9F.css">
   </head>
 
   <body>
     <header class="header" id="js-header">
       <a href="#" class="header__logo">
-        <img src="/suzuki-hiroaki-static/img/vite.svg" alt="Vite">
+        <img src="/img/icon-vite" alt="Vite">
         <h1>Suzuki Hiroaki</h1>
       </a>
 
@@ -37,6 +37,13 @@
             <a href="#skill">Skill</a>
           </li>
           <li class="header__hamburger-nav-list-item">
+            <a href="#works">Works</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <a href="#blogs">blogs</a>
+          </li>
+          <li class="header__hamburger-nav-list-item">
+            <p class="header__hamburger-nav-sns-list-title">Account</p>
             <ul class="header__hamburger-nav-sns-list">
               <li>
                 <a href="https://www.instagram.com/kanbaru2024/" target="_blank">
@@ -51,6 +58,11 @@
               <li>
                 <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP" target="_blank">
                   <img src="/suzuki-hiroaki-static/img/icon_Facebook.png" alt="Facebook">
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/kanbaru-github" target="_blank">
+                  <img src="/suzuki-hiroaki-static/img/icon-github.png" alt="GitHub">
                 </a>
               </li>
             </ul>
@@ -118,7 +130,7 @@
           <li>
             <a href="https://www.typescriptlang.org/" target="_blank">
               <figure>
-                <img src="/suzuki-hiroaki-static/img/typescript.svg" alt="TypeScript">
+                <img src="/suzuki-hiroaki-static/img/icon-typescript.svg" alt="TypeScript">
                 <figcaption>TypeScript</figcaption>
               </figure>
             </a>
@@ -126,7 +138,7 @@
           <li>
             <a href="https://vitejs.dev/" target="_blank">
               <figure>
-                <img src="/suzuki-hiroaki-static/img/vite.svg" alt="Vite">
+                <img src="/suzuki-hiroaki-static/img/icon-vite.svg" alt="Vite">
                 <figcaption>Vite</figcaption>
               </figure>
             </a>
@@ -134,7 +146,7 @@
           <li>
             <a href="https://laravel.com/" target="_blank">
               <figure>
-                <img src="/suzuki-hiroaki-static/img/laravel.svg" alt="laravel">
+                <img src="/suzuki-hiroaki-static/img/icon-laravel.svg" alt="laravel">
                 <figcaption>Laravel</figcaption>
               </figure>
             </a>
@@ -142,14 +154,12 @@
         </ul>
       </section>
 
-      <section class="works">
+      <section class="works" id="works">
         <h2>Works</h2>
-        <p class="works__no-contents">
-          Coming soon...
-        </p>
+        <ul class="works__repo-list" id="js-repoList"></ul>
       </section>
 
-      <section class="blogs">
+      <section class="blogs" id="blogs">
         <h2>Blogs</h2>
         <p class="blogs__no-contents">
           Coming soon...
@@ -157,30 +167,33 @@
       </section>
     </main>
 
-    <div id="app"></div>
-
     <a href="#" class="to-top-btn" id="js-toTopBtn">
       ↑
     </a>
 
     <footer class="footer">
-      <h3>引用元:</h3>
-      <ul class="footer__ref-list">
-        <li>
-          <a target="_blank" href="https://icons8.com/icon/sXm12ie1GUjg/laptop-coding">Coding</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://icons8.com/icon/20909/html-5">HTML5</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://icons8.com/icon/QBqFNfPPB2Kx/sass">生意気な</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://icons8.com/icon/fAMVO_fuoOuC/php-logo">PHP ロゴ</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
-        </li>
-      </ul>
+      <div class="footer__ref">
+        <h3>引用元:</h3>
+        <ul class="footer__ref-list">
+          <li>
+            <a target="_blank" href="https://icons8.com/icon/sXm12ie1GUjg/laptop-coding">Coding</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://icons8.com/icon/20909/html-5">HTML5</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://icons8.com/icon/QBqFNfPPB2Kx/sass">生意気な</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://icons8.com/icon/fAMVO_fuoOuC/php-logo">PHP ロゴ</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://icons8.com/icon/3tC9EQumUAuq/github">GitHub</a> アイコン by <a target="_blank" href="https://icons8.com">Icons8</a>
+          </li>
+        </ul>
+      </div>
 
-      <p class="footer__copyRight">
+      <p class="footer__copy-right">
         ©︎Suzuki Hiroaki All rights reserved.
       </p>
     </footer>
