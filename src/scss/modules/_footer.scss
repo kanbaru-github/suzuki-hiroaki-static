@@ -1,0 +1,27 @@
+@use "./variables" as vars;
+@use "./mixins";
+
+.footer {
+  background-color: vars.$main-color;
+  padding: 1rem;
+  margin-top: 1rem;
+  &__ref {
+    width: 80%;
+    margin: 0 auto;
+    @include mixins.large-screen {
+      width: 50%;
+      margin: 0 auto;
+    }
+    &-list {
+      margin-top: 6px;
+      margin: 6px auto 0 0.9rem;
+      font-size: 0.9rem;
+      line-height: 1.2;
+    }
+  }
+  &__copy-right {
+    margin-top: 10px;
+    font-size: 0.6rem;
+    text-align: center;
+  }
+}

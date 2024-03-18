@@ -2,6 +2,7 @@
 @use "./modules/variables" as vars;
 @use "./modules/mixins";
 @use "./modules/header";
+@use "./modules/footer";
 
 // 高さ・位置・透過が変化して線が上から下に動く
 @keyframes scroll-prompt {
@@ -146,7 +147,7 @@ main {
     width: 95%;
     margin: 5px auto 0;
     @include mixins.large-screen {
-      width: 60%
+      width: 50%
     }
     li {
       display: flex;
@@ -158,8 +159,9 @@ main {
         font-size: 1.2rem;
         display: flex;
         img {
-          width: 75px;
+          width: 60px;
           margin-right: 1rem;
+          padding: 5px;
         }
         div {
           padding: 15px 0;
@@ -197,21 +199,4 @@ main {
   bottom: 1.5rem;
   right: 1.5rem;
   cursor: pointer;
-}
-
-.footer {
-  background-color: vars.$main-color;
-  padding: 1rem;
-  margin-top: 1rem;
-  &__ref-list {
-    margin-top: 6px;
-    margin: 6px auto 0 0.9rem;
-    font-size: 0.9rem;
-    line-height: 1.2;
-  }
-  &__copyRight {
-    margin-top: 10px;
-    font-size: 0.6rem;
-    text-align: center;
-  }
 }
