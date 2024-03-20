@@ -59,9 +59,28 @@ const handleHamburgerMenu = () => {
   });
 }
 
+/**
+ * ブログのアコーディオンを制御
+ */
+const handleAccordion = () => {
+  document.querySelectorAll('.js-accordionToggle').forEach(elem => {
+    elem.addEventListener('click', () => {
+      elem.classList.toggle('is-active');
+
+      const content = elem.nextElementSibling as HTMLElement;
+      if (content && elem.classList.contains('is-active')) {
+        content.style.maxHeight = `${content?.scrollHeight}px`;
+      } else if (content) {
+        content.style.maxHeight = '0px';
+      }
+    });
+  });
+}
+
 handleScroll();
 handleToTopBtn();
 handleHamburgerMenu();
 displayRepositories('kanbaru-github');
+handleAccordion();
 
 window.addEventListener('scroll', handleToTopBtn);
