@@ -63,15 +63,19 @@ const handleHamburgerMenu = () => {
  * ブログのアコーディオンを制御
  */
 const handleAccordion = () => {
-  document.querySelectorAll('.js-accordionToggle').forEach(elem => {
-    elem.addEventListener('click', () => {
-      elem.classList.toggle('is-active');
-
-      const content = elem.nextElementSibling as HTMLElement;
-      if (content && elem.classList.contains('is-active')) {
-        content.style.maxHeight = `${content?.scrollHeight}px`;
-      } else if (content) {
+  document.querySelectorAll<HTMLElement>('.js-accordionToggle').forEach(elem => {
+    const toggleAccordion = (element: HTMLElement, content: HTMLElement) => {
+      element.classList.toggle('is-active');
+      if (element.classList.contains('is-active')) {
+        content.style.maxHeight = `${content.scrollHeight}px`;
+      } else {
         content.style.maxHeight = '0px';
+      }
+    };
+    elem.addEventListener('click', () => {
+      const content = elem.nextElementSibling;
+      if (content instanceof HTMLElement) {
+        toggleAccordion(elem, content);
       }
     });
   });
