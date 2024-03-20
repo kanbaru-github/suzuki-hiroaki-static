@@ -210,11 +210,11 @@ main {
       }
       &::before{
         transform: rotate(-45deg);
-        right: 35px;
+        right: 20px;
       }
       &::after{
         transform: rotate(45deg);
-        right: 30px;
+        right: 15px;
       }
       &.is-active {
         &::before {
@@ -224,6 +224,9 @@ main {
           transform: rotate(135deg);
         }
       }
+    }
+    @include mixins.large-screen() {
+      max-width: 50%;
     }
     &-body {
       max-height: 0;
