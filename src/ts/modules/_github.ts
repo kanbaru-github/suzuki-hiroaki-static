@@ -1,4 +1,4 @@
-import githubIcon from '../../../public/img/icon-github.png';
+import githubIcon from '/img/icon-github.png';
 
 interface Repository {
   id: number;
