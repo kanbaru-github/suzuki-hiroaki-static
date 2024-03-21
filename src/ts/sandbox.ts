@@ -1,5 +1,3 @@
-import { setupCounter } from './modules/_counter.ts'
-
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <div class="card">
@@ -7,5 +5,3 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
     </div>
   </div>
 `
-
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)

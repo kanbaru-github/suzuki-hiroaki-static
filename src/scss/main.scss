@@ -243,8 +243,67 @@ main {
       }
     }
   }
-  &__no-contents {
-    @include mixins.no-contents();
+}
+
+@keyframes hop {
+  0% {
+    transform: scale(1.0, 1.0) translate(0, 0);
+  }
+  15% {
+    transform: scale(0.98, 0.9) translate(0, 5px);
+  }
+  30% {
+    transform: scale(1.02, 1.0) translate(0, 8px);
+  }
+  50% {transform: scale(0.98, 1.05) translate(0, -8px);
+  }
+  70% {
+    transform: scale(1.0, 0.9) translate(0, 5px);
+  }
+  100% {
+    transform: scale(1.0, 1.0) translate(0, 0);
+  }
+  0%, 100% {
+    opacity: 1;
+  }
+}
+
+.good {
+  text-align: center;
+  margin: 50px 0 10px;
+  > p {
+    font-size: 1.2rem;
+    font-family: serif;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin: 10px auto 0;
+    width: 100px;
+    cursor: pointer;
+    img {
+      width: 50px;
+    }
+    span {
+      font-size: 1.2rem;
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    }
+    &.is-clicked {
+      animation: hop 1s ease-in-out forwards;
+      cursor: no-drop;
+    }
+  }
+  &__reset {
+    margin-top: 10px;
+    border-radius: 1rem;
+    background-color: vars.$sub-color;
+    border: 1px solid vars.$sub-color;
+    cursor: pointer;
+    &:hover {
+      opacity: .8;
+    }
   }
 }
 

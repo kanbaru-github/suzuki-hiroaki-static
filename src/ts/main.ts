@@ -1,3 +1,4 @@
+import { handleGoodBtn } from "./modules/_counter";
 import { displayRepositories } from "./modules/_github";
 
 /**
@@ -86,5 +87,6 @@ handleToTopBtn();
 handleHamburgerMenu();
 displayRepositories('kanbaru-github');
 handleAccordion();
+handleGoodBtn(document.getElementById('js-goodBtn')!);
 
 window.addEventListener('scroll', handleToTopBtn);
