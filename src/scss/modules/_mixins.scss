@@ -10,11 +10,3 @@
   text-align: center;
   margin-top: 25px;
 }
-
-// コンテンツを埋めたら削除
-@mixin no-contents {
-  margin-top: 10px;
-  text-align: center;
-  font-size: large;
-  color: #888;
-}

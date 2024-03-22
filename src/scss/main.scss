@@ -80,6 +80,37 @@ main {
       width: 30rem;
     }
   }
+  h3 {
+    font-size: 1.6rem;
+    font-family: cursive;
+    text-align: center;
+    margin-top: 15px;
+  }
+  &__career-table {
+    margin: 10px auto 0;
+    width: 95%;
+    font-family: serif;
+    th {
+      border: 1px solid #000;
+      padding: 5px;
+      font-weight: bold;
+      background-color: vars.$sub-color;
+    }
+    td {
+      border: 1px solid #000;
+      padding: 5px;
+      vertical-align: middle;
+      a {
+        color: vars.$main-color;
+      }
+      &.year {
+        text-align: center;
+      }
+    }
+    @include mixins.large-screen() {
+      width: 30rem
+    }
+  }
 }
 
 .service {
@@ -253,6 +284,12 @@ main {
       max-height: 0;
       overflow: hidden;
       transition: .5s;
+      img {
+        width: 22rem;
+        object-fit: cover;
+        display: block;
+        margin: 0px auto;
+      }
       &-txt {
         margin: 10px 1rem 5px;
       }

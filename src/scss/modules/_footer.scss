@@ -19,9 +19,29 @@
       line-height: 1.2;
     }
   }
+  &__contact {
+    font-size: .9rem;
+    text-align: center;
+    margin-top: 15px;
+    &-list {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      li {
+        margin-right: 1rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+      img {
+        width: 30px;
+      }
+    }
+  }
   &__copy-right {
     margin-top: 10px;
     font-size: 0.6rem;
     text-align: center;
+    display: block;
   }
 }
