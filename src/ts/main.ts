@@ -1,5 +1,8 @@
 import { handleGoodBtn } from "./modules/_counter";
 import { displayRepositories } from "./modules/_github";
+import headerSect from "./modules/_header";
+
+headerSect();
 
 /**
  * スムーススクロールを制御
