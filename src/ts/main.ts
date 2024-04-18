@@ -1,8 +1,12 @@
 import { handleGoodBtn } from "./modules/_counter";
 import { displayRepositories } from "./modules/_github";
 import headerSect from "./modules/_header";
+import footerSect from "./modules/_footer";
+import skillSect from "./modules/_skill";
 
 headerSect();
+skillSect();
+footerSect();
 
 /**
  * スムーススクロールを制御

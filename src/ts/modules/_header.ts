@@ -1,8 +1,6 @@
 import viteIcon from '/img/icon-vite.svg';
-import instagramIcon from '/img/icon_Instagram.png';
-import xIcon from '/img/icon_x.png';
-import facebookIcon from '/img/icon_Facebook.png';
 import githubIcon from '/img/icon-github.png';
+import { socialMediaLinks } from './_constant';
 
 const headerSect = () => {
   document.querySelector<HTMLDivElement>('#header')!.innerHTML = `
@@ -41,21 +39,6 @@ const headerSect = () => {
             <p class="header__hamburger-nav-sns-list-title">Account</p>
             <ul class="header__hamburger-nav-sns-list">
               <li>
-                <a href="https://www.instagram.com/kanbaru2024/" target="_blank">
-                  <img src="${instagramIcon}" alt="Instagram">
-                </a>
-              </li>
-              <li>
-                <a href="https://twitter.com/kanbaru2024" target="_blank">
-                  <img src="${xIcon}" alt="X">
-                </a>
-              </li>
-              <li>
-                <a href="https://www.facebook.com/profile.php?id=100078000177599&locale=ja_JP" target="_blank">
-                  <img src="${facebookIcon}" alt="Facebook">
-                </a>
-              </li>
-              <li>
                 <a href="https://github.com/kanbaru-github" target="_blank">
                   <img src="${githubIcon}" alt="GitHub">
                 </a>
@@ -66,6 +49,24 @@ const headerSect = () => {
       </nav>
     </header>
   `;
+
+  const headerSnsList = document.querySelector<HTMLUListElement>('.header__hamburger-nav-sns-list');
+  if (headerSnsList) {
+    socialMediaLinks.forEach(link => {
+      const listItem = document.createElement('li');
+      const anchor = document.createElement('a');
+      anchor.href = link.href;
+      anchor.target = '_blank';
+
+      const icon = document.createElement('img');
+      icon.src = link.src;
+      icon.alt = link.alt;
+
+      anchor.appendChild(icon);
+      listItem.appendChild(anchor);
+      headerSnsList.appendChild(listItem);
+    });
+  }
 }
 
 export default headerSect;
